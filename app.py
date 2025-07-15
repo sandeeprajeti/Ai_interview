@@ -11,7 +11,6 @@ load_dotenv()
 EMAIL_ADDRESS = os.environ['EMAIL_ADDRESS']
 EMAIL_PASSWORD = os.environ['EMAIL_PASSWORD']
 
-
 app = Flask(__name__)
 app.secret_key = 'supersecretkey123'
 UPLOAD_FOLDER = 'uploads'
@@ -19,7 +18,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # ✅ Configure Gemini API
 
-genai.configure(api_key=os.environ['AIzaSyAMYBfhw23Pm9P7mQIH0-UHwQpJIAh4Aa0'])
+genai.configure(api_key=os.environ['GOOGLE_API_KEY'])
+    
 
 model = genai.GenerativeModel('gemini-2.0-flash')
 
