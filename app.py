@@ -4,25 +4,30 @@ import smtplib
 import fitz  # PyMuPDF
 import google.generativeai as genai
 import mysql.connector
-
+from dotenv import load_dotenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-EMAIL_ADDRESS = "sandeeprajeti9787@gmail.com"
-EMAIL_PASSWORD = "przn lyyt nmzj kikk" 
+load_dotenv()
+EMAIL_ADDRESS = os.environ['sandeeprajeti9787@gmail.com']
+EMAIL_PASSWORD = os.environ['przn lyyt nmzj kikk']
+
 app = Flask(__name__)
 app.secret_key = 'supersecretkey123'
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 # ✅ Configure Gemini API
-genai.configure(api_key="AIzaSyAMYBfhw23Pm9P7mQIH0-UHwQpJIAh4Aa0")
+
+genai.configure(api_key=os.environ['AIzaSyAMYBfhw23Pm9P7mQIH0-UHwQpJIAh4Aa0'])
+
 model = genai.GenerativeModel('gemini-2.0-flash')
 
+
 db = mysql.connector.connect(
-    host="bjz4x4ymkcqgfacnl7gw-mysql.services.clever-cloud.com",
-    user="uqrwwpy0fkon2tdk",
-    password="uqrwwpy0fkon2tdk",
-    database="bjz4x4ymkcqgfacnl7gw",
+    host=os.environ['bjz4x4ymkcqgfacnl7gw-mysql.services.clever-cloud.com'],
+    user=os.environ['DB_USuqrwwpy0fkon2tdkER'],
+    password=os.environ['uqrwwpy0fkon2tdk'],
+    database=os.environ['bjz4x4ymkcqgfacnl7gw'],
     port=3306
 )
 cursor = db.cursor(dictionary=True)
