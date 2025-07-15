@@ -25,10 +25,10 @@ model = genai.GenerativeModel('gemini-2.0-flash')
 
 
 db = mysql.connector.connect(
-    host=os.environ['bjz4x4ymkcqgfacnl7gw-mysql.services.clever-cloud.com'],
-    user=os.environ['DB_USuqrwwpy0fkon2tdkER'],
-    password=os.environ['uqrwwpy0fkon2tdk'],
-    database=os.environ['bjz4x4ymkcqgfacnl7gw'],
+    host=os.environ['DB_HOST'],
+    user=os.environ['DB_USER'],
+    password=os.environ['DB_PASSWORD'],
+    database=os.environ['DB_NAME'],
     port=3306
 )
 cursor = db.cursor(dictionary=True)
