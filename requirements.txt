@@ -1,1 +1,9 @@
-pip freeze > requirements.txt
+Flask
+gunicorn
+mysql-connector-python
+python-dotenv
+google-generativeai
+PyMuPDF
+git add requirements.txt
+git commit -m "Added correct dependencies"
+git push origin main
