@@ -8,8 +8,9 @@ from dotenv import load_dotenv
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 load_dotenv()
-EMAIL_ADDRESS = os.environ['sandeeprajeti9787@gmail.com']
-EMAIL_PASSWORD = os.environ['przn lyyt nmzj kikk']
+EMAIL_ADDRESS = os.environ['EMAIL_ADDRESS']
+EMAIL_PASSWORD = os.environ['EMAIL_PASSWORD']
+
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey123'
